@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    color : #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+}
+
+.pages {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: -100%;
+    transition: bottom .7s;
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.page:first-child {
+  bottom: 0;
+}
+
+.first {
+    background-color: #000000;
+}
+
+.second {
+    background-color: #000000;
+}
+
+.third {
+    background-color: #000000;
+  min-height: 100vh; /* 화면 높이에 맞춤 */
+  position: relative; /* footer 포지셔닝을 위해 */
+}
+
+.pagination {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pagination>li {
+    list-style: none;
+    height: 20px;
+    width: 20px;
+    background: #000000;
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: background .7s;
+}
+
+.pagination>li.active {
+    background: #fed151;
+}
+
+.title {
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.firstTitle {
+    width: 500px;
+    position: absolute;
+    top: 27%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 3rem;
+
+}
+.firstComment {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    color:#fff;
+}
+.secondComment {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:#fff;
+}
+
+.firstText {
+    width: 30%;
+    position: absolute;
+    top: 60%;
+    left: 55px;
+    transform: translateY(-50%);
+    text-align: left;
+    color:#fff;
+}
+
+
+.comment {
+    width: 35%;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:#fff;
+}
+
+.slider{
+    top: 40%;
+    location:center;
+}
+
+.Header {
+    width:90%;
+    height: 80%;
+}
+
+.image-wrapper {
+    float: right; /* 이미지를 오른쪽으로 배치 */
+    position: absolute;
+    margin: 0 0 20px 700px; /* 이미지 주변에 간격 추가 */
+    width:110%;
+    height: 90%;    
+}   

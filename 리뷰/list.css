@@ -1,0 +1,32 @@
+.wrapper .outer{
+	height: 135px;
+	width: 135px;
+	overflow: hidden;
+}
+input[type="radio"]{
+	display: none;
+}
+.wrapper .emojis{
+	height: 500%;
+	display: flex;
+	flex-direction: column;
+}
+
+.outer li{
+	height: 20%;
+	list-style: none;
+	width: 100%;
+	transition: all 0.3s ease;
+}
+#star2:checked ~ .content .outer .slide{
+	margin-top: -135px;
+}
+#star3:checked ~ .content .outer .slide{
+	margin-top: -270px;
+}
+#star4:checked ~ .content .outer .slide{
+	margin-top: -405px;
+}
+#star5:checked ~ .content .outer .slide{
+	margin-top: -540px;
+}

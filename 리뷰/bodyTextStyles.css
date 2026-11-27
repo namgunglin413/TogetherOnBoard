@@ -1,0 +1,21 @@
+.input-wrapper:has(input:focus) {
+	border: 3px solid #fed151;
+	box-shadow: 0 0 40px
+	hsl(50 65% 40 / 0.5);
+}
+
+.input-wrapper > svg {
+	position: absolute;
+	right: 1rem;
+	width: 28px;
+	flex-shrink: 0;
+	transition: 0.25s;
+}
+
+.input.focus + svg > path {
+	stroke: none;
+	fill: #fed151;
+}
+.input:focus + svg{
+	scale: 1.2;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EVENT</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    a {
+      text-decoration: none; /* 밑줄 제거 */
+      color: #ffffff; /* 글자 색상 검정색으로 변경 */
+    }
+    .event-list {
+      display: grid; /* CSS Grid 사용 */
+      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* 각 아이템이 30% 너비를 가지도록 설정 */
+      gap: 3%; /* 아이템 사이 간격 설정 */
+      padding: 3%;
+    }
+    .event-item {
+      aspect-ratio: 1 / 1; /* 1:1 비율 유지 */
+      position: relative; /* 이미지 비율 유지를 위해 필요한 속성 */
+      text-align: center; /* 아이템 내부 텍스트 정렬 (가운데 정렬) */
+      overflow: hidden; /* 이미지가 아이템을 넘지 않도록 설정 */
+    }
+    .event-item img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 이미지가 컨테이너를 덮도록 설정 */
+      transform: translate(-50%, -50%); /* 이미지를 중앙에 위치 */
+    }
+    .event-item h3 {
+      margin-top: 10px; /* 제목 상단 여백 */
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* 배경색 추가로 텍스트 가독성 향상 */
+    }
+  </style>
+</head>
+<body>
+  <h1 style="color: #fff;">EVENT</h1>
+  <div class="event-list">   
+    <div class="event-item">
+      <a href="2024 새해 이벤트.html">
+      <img src="이벤트/2024 새해 이벤트.png" alt="2024 새해 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 연말 감사 이벤트.html">
+      <img src="이벤트/2023 연말 감사 이벤트.png" alt="2023 연말 감사 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 블랙프라이데이 이벤트.html">
+      <img src="이벤트/2023 블랙프라이데이 이벤트.png" alt="2023 블랙프라이데이 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 할로윈 이벤트.html">
+      <img src="이벤트/2023 할로윈 이벤트.png" alt="2023 할로윈 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 추석맞이 이벤트.html">
+      <img src="이벤트/2023 추석맞이 이벤트.png" alt="2023 추석맞이 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 여름방학 이벤트.html">
+      <img src="이벤트/2023 여름방학 이벤트.png" alt="2023 여름방학 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 어린이날 이벤트.html">
+      <img src="이벤트/2023 어린이날 이벤트.png" alt="2023 어린이날 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 봄맞이 이벤트.html">
+      <img src="이벤트/2023 봄맞이 이벤트.png" alt="2023 봄맞이 이벤트"></a>
+    </div>
+    <div class="event-item">
+      <a href="2023 오픈 이벤트.html">
+      <img src="이벤트/2023 오픈 이벤트.png" alt="2023 오픈 이벤트"></a>
+    </div>
+  </div>
+  <div class="btn-top"><a href="#">Top</a></div><!-- 탑버튼 -->
+  <style>.btn-top{position:fixed;right:30px;bottom:100px;z-index:1000;}
+.btn-top a{display:block;width:70px;height:70px;border-radius:50%;line-height:70px;text-align:center;color:#fff;background-color:#131419}</style>
+
+<script>
+; // 이전 소스의 영향을 막기 위해서
+(function(win, doc){ // window, document 받아옴
+    win.sUI = {}; // sUI 객체에 탑버튼 등 만드는 UI 추가
+
+   sUI.goUp = function(){ // 탑버튼 메소드 시작
+        'use strict';
+var vendors = ['webkit', 'moz'];
+for(var x = 0; x < vendors.length && !win.requestAnimationFrame; ++x) {
+  win.requestAnimationFrame = win[vendors[x]+'RequestAnimationFrame'];
+  win.cancelAnimationFrame = win[vendors[x]+'CancelAnimationFrame'] || win[vendors[x]+'CancelRequestAnimationFrame'];
+}
+var lastTime = 0;
+if (!win.requestAnimationFrame)
+  win.requestAnimationFrame = function(callback, element) {
+    var currTime = new Date().getTime();
+    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+    var id = win.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+    lastTime = currTime + timeToCall;
+    return id;
+  };
+var btnTop = doc.querySelector('.btn-top'); 
+var scrollToTop = function(e) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue=false);
+  var t = 500; // 스크롤 시간
+...
+  function step (newTimestamp) {
+    // callback method is passed a single argument, a OMHighResTimeStamp
+    // indicate current time
+    if (oldTimestamp !== null) {
+      // if duration is 0 scrollY will be -Infinity
+      scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / t; // t or scrollDuration
+
+      if (scrollY <= 0) return domHtml.scrollTop = 0;
+      domHtml.scrollTop = scrollY;
+    }
+    oldTimestamp = newTimestamp;
+    win.requestAnimationFrame(step); // over IE10
+  }
+  win.requestAnimationFrame(step);
+}
+
+// execute scrollToTop function, go to top of page, when top button is clicked.
+btnTop.addEventListener('click', scrollToTop)
+</script>
+</body>
+</html>

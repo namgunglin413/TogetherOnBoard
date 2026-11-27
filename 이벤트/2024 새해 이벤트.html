@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVENT</title>
+    <link rel="stylesheet" href="css/css.css">
+    <style>
+        .cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cont img {
+            width: 70%;
+            height: 70%;
+            margin: 10px 0; /* 이미지 간의 간격을 위해 추가 */
+        }
+    </style>
+</head>
+<body>
+    <div class="board_wrap">
+        <div class="board_title">
+            <strong>EVENT</strong>
+        </div>
+        <div class="board_view_wrap">
+            <div class="board_view">
+                <div class="title">
+                    2024 새해맞이 제휴할인
+                </div>
+                <div class="cont">
+                    <img src="2024 새해 이벤트/1.png" alt="2024 새해 이벤트">
+                    <img src="2024 새해 이벤트/2.png" alt="2024 새해 이벤트">
+                    <img src="2024 새해 이벤트/3.png" alt="2024 새해 이벤트">
+                </div>
+            </div>
+            <div class="bt_wrap">
+                <a href="메인 이벤트.html" class="on">목록</a>
+            </div>
+        </div>
+    </div>
+    <div class="btn-top"><a href="#">Top</a></div><!-- 탑버튼 -->
+    <style>.btn-top{position:fixed;right:30px;bottom:100px;z-index:1000;}
+.btn-top a{display:block;width:70px;height:70px;border-radius:50%;line-height:70px;text-align:center;color:#fff;background-color:#131419}</style>
+
+<script>
+; // 이전 소스의 영향을 막기 위해서
+(function(win, doc){ // window, document 받아옴
+    win.sUI = {}; // sUI 객체에 탑버튼 등 만드는 UI 추가
+
+   sUI.goUp = function(){ // 탑버튼 메소드 시작
+        'use strict';
+var vendors = ['webkit', 'moz'];
+for(var x = 0; x < vendors.length && !win.requestAnimationFrame; ++x) {
+  win.requestAnimationFrame = win[vendors[x]+'RequestAnimationFrame'];
+  win.cancelAnimationFrame = win[vendors[x]+'CancelAnimationFrame'] || win[vendors[x]+'CancelRequestAnimationFrame'];
+}
+var lastTime = 0;
+if (!win.requestAnimationFrame)
+  win.requestAnimationFrame = function(callback, element) {
+    var currTime = new Date().getTime();
+    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+    var id = win.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+    lastTime = currTime + timeToCall;
+    return id;
+  };
+var btnTop = doc.querySelector('.btn-top'); 
+var scrollToTop = function(e) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue=false);
+  var t = 500; // 스크롤 시간
+...
+  function step (newTimestamp) {
+    // callback method is passed a single argument, a OMHighResTimeStamp
+    // indicate current time
+    if (oldTimestamp !== null) {
+      // if duration is 0 scrollY will be -Infinity
+      scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / t; // t or scrollDuration
+
+      if (scrollY <= 0) return domHtml.scrollTop = 0;
+      domHtml.scrollTop = scrollY;
+    }
+    oldTimestamp = newTimestamp;
+    win.requestAnimationFrame(step); // over IE10
+  }
+  win.requestAnimationFrame(step);
+}
+
+// execute scrollToTop function, go to top of page, when top button is clicked.
+btnTop.addEventListener('click', scrollToTop)
+</script>
+</body>
+</html>

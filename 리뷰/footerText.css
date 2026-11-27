@@ -1,0 +1,46 @@
+.footer span{
+	font-size: 17px;
+	font-weight: 400;
+	color: rgb(165,143,143);
+}
+.footer .text::before{
+	content: "게임에 평점을 매겨주세요!";
+}
+.footer .numb::before{
+	content: "0/5점";
+}
+
+#star1:checked ~ .footer .text::before{
+	content: "별로예요";
+}
+#star1:checked ~ .footer .numb::before{
+	content: "1/5점";
+}
+
+#star2:checked ~ .footer .text::before{
+	content: "그저 그래요";
+}
+#star2:checked ~ .footer .numb::before{
+	content: "2/5점";
+}
+
+#star3:checked ~ .footer .text::before{
+	content: "보통이에요";
+}
+#star3:checked ~ .footer .numb::before{
+	content: "3/5점";
+}
+
+#star4:checked ~ .footer .text::before{
+	content: "재미있어요";
+}
+#star4:checked ~ .footer .numb::before{
+	content: "4/5점";
+}
+
+#star5:checked ~ .footer .text::before{
+	content: "최고예요!";
+}
+#star5:checked ~ .footer .numb::before{
+	content: "5/5점";
+}

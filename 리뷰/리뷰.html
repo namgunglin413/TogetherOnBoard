@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test_평점</title>
+<link rel="stylesheet" type="text/css" href="body.css">		<!-- css 및 별모양 불러오기-->
+<link rel="stylesheet" type="text/css" href="bodyText.css">
+<link rel="stylesheet" type="text/css" href="bodyTextStyles.css">
+<link rel="stylesheet" type="text/css" href="list.css">
+<link rel="stylesheet" type="text/css" href="starHover.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="footerText.css">
+<link rel="stylesheet" type="text/css" href="btnstyles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!--<i class="fa-solid fa-star"></i> -->
+
+<div class="wrapper">
+<input type="radio" name="rate" id="star1">			<!-- 라디오 타입으로 별점 매김-->
+<input type="radio" name="rate" id="star2">
+<input type="radio" name="rate" id="star3">
+<input type="radio" name="rate" id="star4"> 
+<input type="radio" name="rate" id="star5"> 
+<div class="content">
+	<div class="outer">
+		<div class="emojis">
+			<li class="slide"><span>😡</span></li>			<!-- 점수별 표정 움직임 -->
+			<li><span>😟</span></li>
+			<li><span>😐</span></li>
+			<li><span>😃</span></li>
+			<li><span>🤩</span></li>
+		</div>
+	</div>
+	<div class="stars">
+		<label for="star1" class="star1 fa fa-star"></label>	<!--각 별 라벨 지정-->
+		<label for="star2" class="star2 fa fa-star"></label>
+		<label for="star3" class="star3 fa fa-star"></label>
+		<label for="star4" class="star4 fa fa-star"></label>
+		<label for="star5" class="star5 fa fa-star"></label>
+	</div>
+</div>
+<div class="footer">
+	<span class="text"></span>
+	<span class="numb"></span>
+
+<div class="input-wrapper">
+	<input class="input" type="text" placeholder="리뷰 입력">
+</div>
+
+<!-- 
+게임 선택(게임 리스트를 불러와야 함, 지금은 불가능)
+텍스트 남기는 칸(리뷰를 입력하세요. 라는 흐릿한 글씨 포함)
+제출 버튼 만들기->위치도 제대로 안함 버튼만 만듦 // 게임 점수가 저장되고 홈으로
+-->
+<button class="btn">
+	제출
+</button>
+</div>
+</body>
+</html>

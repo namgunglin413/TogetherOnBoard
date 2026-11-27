@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <style>
+        .card {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0069d9;
+        }
+        .image {
+            width: 300px;
+            height: 200px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .content {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: none;
+        }
+        form {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        input[type=text], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        input[type=submit] {
+            background-color: #ffd700;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #CFB006;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // 게시글을 로컬 스토리지에서 가져옴
+        function getPosts() {
+            var posts = localStorage.getItem("posts");
+            if (posts) {
+                document.getElementById("posts").innerHTML = posts;
+
+                // 모든 게시글의 내용을 숨김
+                var contents = document.querySelectorAll('.content');
+                contents.forEach(function(content) {
+                    content.style.display = 'none';
+                });
+
+                // 게시글 클릭 이벤트 추가
+                var cards = document.querySelectorAll('.card');
+                cards.forEach(function(card) {
+                    card.onclick = function() {
+                        var contentElement = this.querySelector('.content');
+                        contentElement.style.display = contentElement.style.display === 'none' ? 'block' : 'none';
+                    };
+                });
+            }
+        }
+
+        // 게시글을 로컬 스토리지에 저장함
+        function savePosts() {
+            var postsDiv = document.getElementById("posts");
+            localStorage.setItem("posts", postsDiv.innerHTML);
+        }
+
+        function addPost() {
+            // 제목과 내용을 가져옴
+            var title = document.getElementById("title").value;
+            var content = document.getElementById("content").value;
+
+            // 게시글을 추가할 div 태그 생성
+            var postDiv = document.createElement("div");
+            postDiv.className = "card";
+            postDiv.onclick = function() {
+                var contentElement = this.querySelector('.content');
+                contentElement.style.display = contentElement.style.display === 'none' ? 'block' : 'none';
+            };
+
+            // 제목 추가
+            var titleElement = document.createElement("h3");
+            titleElement.className = "title";
+            titleElement.innerText = title;
+            postDiv.appendChild(titleElement);
+
+            // 내용 추가
+            var contentElement = document.createElement("p");
+            contentElement.className = "content";
+            contentElement.innerText = content;
+            postDiv.appendChild(contentElement);
+
+
+            // Read More 버튼 추가
+            var buttonElement = document.createElement("button");
+            buttonElement.className = "btn";
+            buttonElement.innerHTML = "<a href='post.html' style='color: white; text-decoration: none;'>닫기</a>";
+            contentElement.appendChild(buttonElement);
+            
+            // 게시글 추가
+            var postsDiv = document.getElementById("posts");
+            postsDiv.insertBefore(postDiv, postsDiv.firstChild);
+
+            // 게시글을 로컬 스토리지에 저장함
+            savePosts();
+
+            // 폼 초기화
+            document.getElementById("title").value = "";
+            document.getElementById("content").value = "";
+        }
+    </script>
+</head>
+<body style="background-color: black;" onload="getPosts();">
+    <div class="hero">
+        <h1 style="color: white;">Community</h1>
+        <h2 style="color: white;">- Board game -</h2>
+    </div>
+    <form onsubmit="addPost(); return false;">
+        <label for="title">제목</label>
+        <input type="text" id="title" name="title" placeholder="제목을 입력하세요...">
+        <label for="content">내용</label>
+        <textarea id="content" name="content" placeholder="내용을 입력하세요..." style="height: 200px;"></textarea>
+        <input type="submit" value="게시글 작성">
+    </form>
+    <div id="posts"></div>
+    <!--<div>
+        <button class="btn"><a href="second.html" style="color: white; text-decoration: none;">두번째 페이지</a></button>
+        <button class="btn"><a href="#" style="color: white; text-decoration: none;">세번째 페이지</a></button>
+        <button class="btn"><a href="#" style="color: white; text-decoration: none;">네번째 페이지</a></button>
+    </div>-->
+</body>
+</html>

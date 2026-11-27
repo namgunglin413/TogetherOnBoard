@@ -1,0 +1,29 @@
+.btn{
+	padding: 9px 25px;
+	background-color: #fed151;
+	border:3px solid #fed151	;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s;
+}
+
+.btn::after{
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: #131419;
+	border-radius: inherit;
+	translate: 6px 6px;
+	transition: 0.25s;
+	z-index: -1;
+}
+
+.btm:hover::after{
+	translate: 0;
+}
+.btn:hover{
+	background-color:
+	#fed151;
+	color:#d37c00;
+}

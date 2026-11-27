@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>보드게임 목록</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+    a {
+      text-decoration: none; /* 밑줄 제거 */
+      color: black; /* 글자 색상 검정색으로 변경 */
+    }
+    h3 {
+      color: white;
+    }
+    .boardgame-list {
+      display: flex; /* 아이템들을 가로로 나열하여 배치 */
+      flex-wrap: wrap; /* 줄이 가득 차면 다음 줄로 넘어가도록 설정 */
+      padding: 3%;
+    }
+    .boardgame-item {
+      width: 27%; /* 아이템 너비 설정 */
+      height: 470px;
+      justify-content: space-between; /* 아이템 사이 간격 일정하게 */
+      margin: 3%; /* 아이템 사이 간격 설정 (픽셀 단위) */
+      /*border: 1px solid #ccc; /* 아이템 테두리 설정 (두께 1픽셀, 색상 #ccc) */
+      text-align: center; /* 아이템 내부 텍스트 정렬 (가운데 정렬) */
+    }
+    .boardgame-item img {
+      height: 75%; /* 이미지 너비를 아이템 너비에 맞춰 설정 */
+      width: auto; /* 이미지 높이를 자동으로 조절 */
+      /*margin-bottom: 10px; /* 이미지 아래 여백 설정 (픽셀 단위) */
+    }
+    .boardgame-item h3 {
+      margin: 5%; /* 제목 여백 */
+    }
+    .boardgame-search {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1%;
+      margin-right: 2%;
+    }
+    #search-input {
+      width: 25%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+    }
+    .boardgame-filter {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1%;
+      margin-right: 2%;
+    }
+    .boardgame-filter button {
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #808080;
+    }
+  </style>
+</head>
+<body bgcolor="black">
+  <h1 style="color: white;">보드게임</h1>
+  <div class="boardgame-search">
+    <input type="text" id="search-input" placeholder="검색어를 입력하세요">
+  </div>
+  <div class="boardgame-filter">
+    <a href="보드게임리스트.html">
+    <button class="btn">전체</button></a>
+    <a href="보드게임-2인.html">
+      <button class="btn" style="background-color: #808080; color: white;">2 - 3 인</button></a>
+    <a href="보드게임-4인.html">
+      <button class="btn">4 - 5 인</button></a>
+    <a href="보드게임-6인.html">
+    <button class="btn">6인 이상</button></a>
+  </div>
+  <div class="boardgame-list">    
+    <div class="boardgame-item">
+      <a href="스플랜더.html">
+      <img src="media/스플랜더.png" alt="보드게임 이미지">
+      <h3>스플랜더</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="다빈치코드.html">
+      <img src="media/다빈치코드.png" alt="보드게임 이미지">
+      <h3>다빈치 코드</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="우노.html">
+      <img src="media/우노.png" alt="보드게임 이미지">
+      <h3>우노</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="테트리스.html">
+      <img src="media/테트리스.png" alt="보드게임 이미지">
+      <h3>테트리스</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="꼬치의달인.html">
+      <img src="media/꼬치의달인.png" alt="보드게임 이미지">
+      <h3>꼬치의 달인</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="딕싯.html">
+      <img src="media/딕싯.png" alt="보드게임 이미지">
+      <h3>딕싯</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="카르카손2008.html">
+      <img src="media/카르카손2008.png" alt="보드게임 이미지">
+      <h3>카르카손 2008</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="루미큐브.html">
+      <img src="media/루미큐브.png" alt="보드게임 이미지">
+      <h3>루미큐브</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="셀레스티아.html">
+      <img src="media/셀레스티아.png" alt="보드게임 이미지">
+      <h3>셀레스티아</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="치킨차차.html">
+      <img src="media/치킨차차.png" alt="보드게임 이미지">
+      <h3>치킨차차</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="마블봅슬레이.html">
+      <img src="media/마블봅슬레이.png" alt="보드게임 이미지">
+      <h3>마블 봅슬레이</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="카후나.html">
+      <img src="media/카후나.png" alt="보드게임 이미지">
+      <h3>카후나</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="페루도.html">
+      <img src="media/페루도.png" alt="보드게임 이미지">
+      <h3>페루도</h3>
+    </div>
+    <div class="boardgame-item">
+      <a href="이스케이프룸.html">
+      <img src="media/이스케이프룸.png" alt="보드게임 이미지">
+      <h3>이스케이프 룸 방 탈출 게임:비상사태</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="텔레스트레이션.html">
+      <img src="media/텔레스트레이션.png" alt="보드게임 이미지">
+      <h3>텔레스트레이션</h3></a>
+    </div>
+    <div class="boardgame-item">
+      <a href="보석찾기듀얼.html">
+      <img src="media/보석찾기듀얼.png" alt="보드게임 이미지">
+      <h3>보석찾기 듀얼</h3></a>
+    </div>
+  </div>
+  <div class="btn-top"><a href="#">Top</a></div><!-- 탑버튼 -->
+  <script>
+    const searchInput = document.getElementById('search-input');
+    const boardgameItems = document.querySelectorAll('.boardgame-item');
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+
+      boardgameItems.forEach(function(item) {
+        const gameTitle = item.querySelector('h3').textContent.toLowerCase();
+
+        if (gameTitle.includes(searchTerm)) {
+          item.style.display = 'block';
+        }
+        else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+  <style>.btn-top{position:fixed;right:30px;bottom:100px;z-index:1000;}
+.btn-top a{display:block;width:70px;height:70px;border-radius:50%;line-height:70px;text-align:center;color:#fff;background-color:#131419}</style>
+
+<script>
+; // 이전 소스의 영향을 막기 위해서
+(function(win, doc){ // window, document 받아옴
+    win.sUI = {}; // sUI 객체에 탑버튼 등 만드는 UI 추가
+
+   sUI.goUp = function(){ // 탑버튼 메소드 시작
+        'use strict';
+var vendors = ['webkit', 'moz'];
+for(var x = 0; x < vendors.length && !win.requestAnimationFrame; ++x) {
+  win.requestAnimationFrame = win[vendors[x]+'RequestAnimationFrame'];
+  win.cancelAnimationFrame = win[vendors[x]+'CancelAnimationFrame'] || win[vendors[x]+'CancelRequestAnimationFrame'];
+}
+var lastTime = 0;
+if (!win.requestAnimationFrame)
+  win.requestAnimationFrame = function(callback, element) {
+    var currTime = new Date().getTime();
+    var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+    var id = win.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+    lastTime = currTime + timeToCall;
+    return id;
+  };
+var btnTop = doc.querySelector('.btn-top'); 
+var scrollToTop = function(e) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue=false);
+  var t = 500; // 스크롤 시간
+...
+  function step (newTimestamp) {
+    // callback method is passed a single argument, a OMHighResTimeStamp
+    // indicate current time
+    if (oldTimestamp !== null) {
+      // if duration is 0 scrollY will be -Infinity
+      scrollY -= totalScrollDistance * (newTimestamp - oldTimestamp) / t; // t or scrollDuration
+
+      if (scrollY <= 0) return domHtml.scrollTop = 0;
+      domHtml.scrollTop = scrollY;
+    }
+    oldTimestamp = newTimestamp;
+    win.requestAnimationFrame(step); // over IE10
+  }
+  win.requestAnimationFrame(step);
+}
+
+// execute scrollToTop function, go to top of page, when top button is clicked.
+btnTop.addEventListener('click', scrollToTop)
+</script>
+</body>
+</html>

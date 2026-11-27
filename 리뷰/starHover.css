@@ -1,0 +1,50 @@
+.outer li span{
+	height: 100%;
+	width:100%;
+	font-size: 5em;
+}
+.content .stars{
+	margin-top: 30px;
+}
+.stars label{
+	font-size: 30px;
+	margin: 0 5px;
+	color: #cccccc;
+}
+
+#star1:hover ~ .content .stars .star1,
+#star1:checked ~ .content .stars .star1,
+
+#star2:hover ~ .content .stars .star1,
+#star2:hover ~ .content .stars .star2,
+#star2:checked ~ .content .stars .star1,
+#star2:checked ~ .content .stars .star2,
+
+#star3:hover ~ .content .stars .star1,
+#star3:hover ~ .content .stars .star2,
+#star3:hover ~ .content .stars .star3,
+#star3:checked ~ .content .stars .star1,
+#star3:checked ~ .content .stars .star2,
+#star3:checked ~ .content .stars .star3,
+
+#star4:hover ~ .content .stars .star1,
+#star4:hover ~ .content .stars .star2,
+#star4:hover ~ .content .stars .star3,
+#star4:hover ~ .content .stars .star4,
+#star4:checked ~ .content .stars .star1,
+#star4:checked ~ .content .stars .star2,
+#star4:checked ~ .content .stars .star3,
+#star4:checked ~ .content .stars .star4,
+
+#star5:hover ~ .content .stars .star1,
+#star5:hover ~ .content .stars .star2,
+#star5:hover ~ .content .stars .star3,
+#star5:hover ~ .content .stars .star4,
+#star5:hover ~ .content .stars .star5,
+#star5:checked ~ .content .stars .star1,
+#star5:checked ~ .content .stars .star2,
+#star5:checked ~ .content .stars .star3,
+#star5:checked ~ .content .stars .star4,
+#star5:checked ~ .content .stars .star5{
+	color: #Fed151;		/*예비 지정 선택된 별 색상, 메인 테마 색 코드가 확정되면 조정될 수 있음*/
+}
